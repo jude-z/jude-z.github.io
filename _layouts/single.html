@@ -57,13 +57,13 @@ layout: default
         {% if site.data.ui-text[locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[locale].meta_label }}</h4>
         {% endif %}
-        {% include page__taxonomy.html locale=locale %}
+        {% comment %}{% include page__taxonomy.html locale=locale %}{% endcomment %}
         {% include page__date.html locale=locale %}
       </footer>
 
       {% if page.share %}{% include social-share.html locale=locale %}{% endif %}
 
-      {% include post_pagination.html locale=locale %}
+      {% comment %}{% include post_pagination.html locale=locale %}{% endcomment %}
     </div>
 
     {% if site.comments.provider and page.comments %}

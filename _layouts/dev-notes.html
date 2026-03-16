@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<div id="main" role="main">
+  <div class="archive">
+    {% assign en_posts = site.posts | where: "lang", "en" %}
+    {% assign ko_posts = site.posts | where: "lang", "ko" %}
+
+    <div class="lang-posts" data-lang="en">
+      {% if en_posts.size > 0 %}
+        {% for post in en_posts %}
+          {% unless post.project %}
+          <article class="archive__item">
+            <h2 class="archive__item-title no_toc">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            <p class="archive__item-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+            <time class="archive__item-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y. %m. %d" }}</time>
+          </article>
+          {% endunless %}
+        {% endfor %}
+      {% else %}
+        <p>No posts yet.</p>
+      {% endif %}
+    </div>
+
+    <div class="lang-posts" data-lang="ko">
+      {% if ko_posts.size > 0 %}
+        {% for post in ko_posts %}
+          {% unless post.project %}
+          <article class="archive__item">
+            <h2 class="archive__item-title no_toc">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            <p class="archive__item-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+            <time class="archive__item-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y. %m. %d" }}</time>
+          </article>
+          {% endunless %}
+        {% endfor %}
+      {% else %}
+        <p>No posts yet.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

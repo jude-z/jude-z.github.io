@@ -7,3 +7,239 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+// Wider centered content (no sidebar)
+.page,
+.archive,
+.page__related {
+  @include breakpoint($large) {
+    float: none;
+    width: 100%;
+    padding-inline-end: 0;
+    margin: 0 auto;
+    max-width: 960px;
+  }
+
+  @include breakpoint($x-large) {
+    float: none;
+    width: 100%;
+    padding-inline-end: 0;
+    max-width: 960px;
+  }
+}
+
+// Project cards
+.project-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25em;
+}
+
+.project-card {
+  display: block;
+  padding: 1.5em;
+  border: 1px solid mix(#fff, $background-color, 15%);
+  border-radius: 8px;
+  text-decoration: none;
+  color: $text-color;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+
+  &:hover {
+    border-color: $link-color;
+    transform: translateY(-2px);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+  }
+
+  &__title {
+    font-size: 1.25em;
+    margin: 0;
+    color: $text-color;
+  }
+
+  &__status {
+    font-size: 0.75em;
+    padding: 0.2em 0.6em;
+    border-radius: 4px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &--completed {
+      background: rgba(#27ae60, 0.2);
+      color: #27ae60;
+    }
+    &--in-progress {
+      background: rgba(#f39c12, 0.2);
+      color: #f39c12;
+    }
+    &--planned {
+      background: rgba(#3498db, 0.2);
+      color: #3498db;
+    }
+  }
+
+  &__excerpt {
+    margin: 0 0 0.75em;
+    color: mix($text-color, $background-color, 70%);
+    font-size: 0.9em;
+    line-height: 1.5;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+  }
+
+  &__tag {
+    font-size: 0.75em;
+    padding: 0.15em 0.5em;
+    border: 1px solid mix(#fff, $background-color, 20%);
+    border-radius: 3px;
+    color: mix($text-color, $background-color, 60%);
+  }
+}
+
+// Project detail page
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  flex-wrap: wrap;
+
+  .page__title {
+    margin-bottom: 0;
+  }
+}
+
+.project-overview {
+  margin-bottom: 2em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid mix(#fff, $background-color, 10%);
+}
+
+.project-posts__heading {
+  margin-bottom: 0.75em;
+}
+
+.project-posts__empty {
+  color: mix($text-color, $background-color, 50%);
+  font-style: italic;
+}
+
+// Post cards within a project
+.project-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75em;
+}
+
+.project-post-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 1.25em;
+  border: 1px solid mix(#fff, $background-color, 12%);
+  border-radius: 6px;
+  text-decoration: none;
+  color: $text-color;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $link-color;
+  }
+
+  &__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: 1.05em;
+    margin: 0 0 0.3em;
+  }
+
+  &__excerpt {
+    margin: 0;
+    font-size: 0.85em;
+    color: mix($text-color, $background-color, 60%);
+    line-height: 1.4;
+  }
+
+  &__date {
+    font-size: 0.8em;
+    color: mix($text-color, $background-color, 45%);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
+
+// Language toggle button
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5em;
+  padding: 0.25em 0.6em;
+  border: 1px solid mix(#fff, $background-color, 25%);
+  border-radius: 4px;
+  background: transparent;
+  color: $text-color;
+  font-size: 0.75em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $link-color;
+  }
+}
+
+// About profile
+.about-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__image {
+    flex-shrink: 0;
+
+    img {
+      width: 180px;
+      height: 180px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    h2 {
+      margin-top: 0;
+    }
+
+    p {
+      color: mix($text-color, $background-color, 75%);
+      line-height: 1.6;
+    }
+  }
+}
+
+// Language post panels
+.lang-posts {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

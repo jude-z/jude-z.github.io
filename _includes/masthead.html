@@ -23,6 +23,9 @@
             </li>
           {%- endfor -%}
         </ul>
+        <button class="lang-toggle" type="button" onclick="toggleLang()">
+          <span class="lang-toggle__label">EN</span>
+        </button>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[locale].search_label | default: "Toggle search" }}</span>

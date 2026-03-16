@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<div id="main" role="main">
+  <div class="archive">
+    <header class="project-header">
+      <h1 class="page__title">{{ page.title }}</h1>
+      {% if page.status %}
+        <span class="project-card__status project-card__status--{{ page.status | slugify }}">{{ page.status }}</span>
+      {% endif %}
+    </header>
+
+    {% if page.description %}
+      <p class="page__lead">{{ page.description }}</p>
+    {% endif %}
+
+    {% if page.tags.size > 0 %}
+      <div class="project-card__tags" style="margin-bottom: 1.5em;">
+        {% for tag in page.tags %}
+          <span class="project-card__tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if content != "" and content != "\n" %}
+      <div class="project-overview">
+        {{ content }}
+      </div>
+    {% endif %}
+
+    <h2 class="project-posts__heading">Posts</h2>
+
+    {% assign project_posts = site.posts | where: "project", page.slug %}
+    {% if project_posts.size > 0 %}
+      <div class="project-posts">
+        {% for post in project_posts %}
+        <a href="{{ post.url | relative_url }}" class="project-post-card">
+          <div class="project-post-card__body">
+            <h3 class="project-post-card__title">{{ post.title }}</h3>
+            <p class="project-post-card__excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          </div>
+          <time class="project-post-card__date" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%Y. %m. %d" }}
+          </time>
+        </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="project-posts__empty">No posts yet.</p>
+    {% endif %}
+  </div>
+</div>
