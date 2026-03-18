@@ -6,7 +6,7 @@ tags:
   - HTTP
   - Web
 lang: en
-date: 2026-03-17
+date: 2026-02-25
 excerpt: "A quick reference for the most common HTTP status codes and when they're used."
 ---
 

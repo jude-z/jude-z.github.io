@@ -31,10 +31,19 @@ function applyLang() {
     el.classList.toggle('active', el.dataset.lang === lang);
   });
 }
+function getPairElement() {
+  return document.querySelector('[data-pair-url]');
+}
 function toggleLang() {
   var current = localStorage.getItem('site-lang') || 'en';
   var next = current === 'en' ? 'ko' : 'en';
   localStorage.setItem('site-lang', next);
+
+  var pairEl = getPairElement();
+  if (pairEl && pairEl.dataset.pairUrl) {
+    window.location.href = pairEl.dataset.pairUrl;
+    return;
+  }
   applyLang();
 }
 document.addEventListener('DOMContentLoaded', applyLang);

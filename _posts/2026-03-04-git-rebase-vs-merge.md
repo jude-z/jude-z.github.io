@@ -5,7 +5,7 @@ categories:
 tags:
   - Git
 lang: ko
-date: 2026-03-17
+date: 2026-03-04
 excerpt: "rebase와 merge의 차이점, 그리고 실무에서 어떤 상황에 어떤 전략을 쓰는 게 맞는지 정리."
 ---
 

@@ -2,6 +2,6 @@
 title: " "
 permalink: /projects/
 layout: projects
-description: "Things I've built and problems I've solved."
+description:
 author_profile: false
 ---
