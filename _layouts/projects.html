@@ -11,61 +11,30 @@ layout: default
     {% endif %}
 
     {% assign projects = site.projects | sort: 'order' %}
-    {% assign en_projects = projects | where: "lang", "en" %}
-    {% assign ko_projects = projects | where: "lang", "ko" %}
 
-    <div class="lang-posts" data-lang="en">
-      {% if en_projects.size > 0 %}
-        <div class="project-cards">
-          {% for project in en_projects %}
-          <a href="{{ project.url | relative_url }}" class="project-card">
-            <div class="project-card__header">
-              <h2 class="project-card__title">{{ project.title }}</h2>
-              {% if project.status %}
-                <span class="project-card__status project-card__status--{{ project.status | slugify }}">{{ project.status }}</span>
-              {% endif %}
-            </div>
-            <p class="project-card__excerpt">{{ project.description | default: project.excerpt | strip_html | truncate: 160 }}</p>
-            {% if project.tags.size > 0 %}
-              <div class="project-card__tags">
-                {% for tag in project.tags %}
-                  <span class="project-card__tag">{{ tag }}</span>
-                {% endfor %}
-              </div>
+    {% if projects.size > 0 %}
+      <div class="project-cards">
+        {% for project in projects %}
+        <a href="{{ project.url | relative_url }}" class="project-card">
+          <div class="project-card__header">
+            <h2 class="project-card__title">{{ project.title }}</h2>
+            {% if project.status %}
+              <span class="project-card__status project-card__status--{{ project.status | slugify }}">{{ project.status }}</span>
             {% endif %}
-          </a>
-          {% endfor %}
-        </div>
-      {% else %}
-        <p>No projects yet.</p>
-      {% endif %}
-    </div>
-
-    <div class="lang-posts" data-lang="ko">
-      {% if ko_projects.size > 0 %}
-        <div class="project-cards">
-          {% for project in ko_projects %}
-          <a href="{{ project.url | relative_url }}" class="project-card">
-            <div class="project-card__header">
-              <h2 class="project-card__title">{{ project.title }}</h2>
-              {% if project.status %}
-                <span class="project-card__status project-card__status--{{ project.status | slugify }}">{{ project.status }}</span>
-              {% endif %}
+          </div>
+          <p class="project-card__excerpt">{{ project.description | default: project.excerpt | strip_html | truncate: 160 }}</p>
+          {% if project.tags.size > 0 %}
+            <div class="project-card__tags">
+              {% for tag in project.tags %}
+                <span class="project-card__tag">{{ tag }}</span>
+              {% endfor %}
             </div>
-            <p class="project-card__excerpt">{{ project.description | default: project.excerpt | strip_html | truncate: 160 }}</p>
-            {% if project.tags.size > 0 %}
-              <div class="project-card__tags">
-                {% for tag in project.tags %}
-                  <span class="project-card__tag">{{ tag }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
-          </a>
-          {% endfor %}
-        </div>
-      {% else %}
-        <p>No projects yet.</p>
-      {% endif %}
-    </div>
+          {% endif %}
+        </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>아직 프로젝트가 없습니다.</p>
+    {% endif %}
   </div>
 </div>

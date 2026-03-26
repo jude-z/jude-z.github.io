@@ -7,17 +7,6 @@ layout: archive
 
 <h3 class="archive__subtitle">{{ site.data.ui-text[locale].recent_posts | default: "Recent Posts" }}</h3>
 
-{% assign en_posts = site.posts | where: "lang", "en" %}
-{% assign ko_posts = site.posts | where: "lang", "ko" %}
-
-<div class="lang-posts" data-lang="en">
-  {% for post in en_posts %}
-    {% include archive-single.html locale=locale type="list" %}
-  {% endfor %}
-</div>
-
-<div class="lang-posts" data-lang="ko">
-  {% for post in ko_posts %}
-    {% include archive-single.html locale=locale type="list" %}
-  {% endfor %}
-</div>
+{% for post in site.posts %}
+  {% include archive-single.html locale=locale type="list" %}
+{% endfor %}

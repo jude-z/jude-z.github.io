@@ -21,33 +21,6 @@
 
 {% include analytics.html %}
 
-<script>
-function applyLang() {
-  var lang = localStorage.getItem('site-lang') || 'en';
-  document.documentElement.setAttribute('data-lang', lang);
-  var btn = document.querySelector('.lang-toggle__label');
-  if (btn) btn.textContent = lang.toUpperCase();
-  document.querySelectorAll('.lang-posts').forEach(function(el) {
-    el.classList.toggle('active', el.dataset.lang === lang);
-  });
-}
-function getPairElement() {
-  return document.querySelector('[data-pair-url]');
-}
-function toggleLang() {
-  var current = localStorage.getItem('site-lang') || 'en';
-  var next = current === 'en' ? 'ko' : 'en';
-  localStorage.setItem('site-lang', next);
-
-  var pairEl = getPairElement();
-  if (pairEl && pairEl.dataset.pairUrl) {
-    window.location.href = pairEl.dataset.pairUrl;
-    return;
-  }
-  applyLang();
-}
-document.addEventListener('DOMContentLoaded', applyLang);
-</script>
 {% include /comments-providers/scripts.html locale=locale %}
 
 {% if site.after_footer_scripts %}

@@ -10,8 +10,8 @@ author_profile: false
     <img src="/assets/images/profile.png" alt="profile">
   </div>
   <div class="about-profile__info">
-    <h2>Hi, I'm jude-z.</h2>
-    <p>Developer who builds things and writes about what I learn along the way.</p>
-    <p>This blog is where I document project experiences, development notes, and lessons learned.</p>
+    <h2>안녕하세요, jude-z입니다.</h2>
+    <p>직접 만들고, 그 과정에서 배운 것들을 기록하는 개발자입니다.</p>
+    <p>이 블로그에는 프로젝트 경험, 개발 노트, 그리고 배운 점들을 정리하고 있습니다.</p>
   </div>
 </div>

@@ -180,26 +180,6 @@ search: false
   }
 }
 
-// Language toggle button
-.lang-toggle {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 0.5em;
-  padding: 0.25em 0.6em;
-  border: 1px solid mix(#fff, $background-color, 25%);
-  border-radius: 4px;
-  background: transparent;
-  color: $text-color;
-  font-size: 0.75em;
-  font-weight: 600;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-
-  &:hover {
-    border-color: $link-color;
-  }
-}
-
 // About profile
 .about-profile {
   display: flex;
@@ -235,11 +215,3 @@ search: false
   }
 }
 
-// Language post panels
-.lang-posts {
-  display: none;
-
-  &.active {
-    display: block;
-  }
-}

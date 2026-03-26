@@ -2,14 +2,7 @@
 layout: default
 ---
 
-{% assign counterparts = site.projects | where: "slug", page.slug %}
-{% for p in counterparts %}
-  {% if p.lang != page.lang %}
-    {% assign pair_url = p.url | relative_url %}
-  {% endif %}
-{% endfor %}
-
-<div id="main" role="main" {% if pair_url %}data-pair-url="{{ pair_url }}"{% endif %} data-page-lang="{{ page.lang }}"
+<div id="main" role="main">
   <div class="archive">
     <header class="project-header">
       <h1 class="page__title">{{ page.title }}</h1>
@@ -38,8 +31,7 @@ layout: default
 
     <h2 class="project-posts__heading">Posts</h2>
 
-    {% assign all_project_posts = site.posts | where: "project", page.slug %}
-    {% assign project_posts = all_project_posts | where: "lang", page.lang %}
+    {% assign project_posts = site.posts | where: "project", page.slug %}
     {% if project_posts.size > 0 %}
       <div class="project-posts">
         {% for post in project_posts %}
@@ -55,7 +47,7 @@ layout: default
         {% endfor %}
       </div>
     {% else %}
-      <p class="project-posts__empty">No posts yet.</p>
+      <p class="project-posts__empty">아직 포스트가 없습니다.</p>
     {% endif %}
   </div>
 </div>

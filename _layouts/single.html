@@ -2,20 +2,6 @@
 layout: default
 ---
 
-{% if page.lang %}
-  {% if page.lang == "ko" %}
-    {% assign pair_slug = page.slug | append: "-en" %}
-  {% else %}
-    {% assign pair_slug = page.slug | replace: "-en", "" %}
-  {% endif %}
-  {% assign pair_post = site.posts | where: "slug", pair_slug | first %}
-  {% if pair_post %}
-    {% assign pair_url = pair_post.url | relative_url %}
-  {% endif %}
-{% endif %}
-
-<div id="single-page-lang" style="display:none" {% if pair_url %}data-pair-url="{{ pair_url }}"{% endif %} data-page-lang="{{ page.lang }}"></div>
-
 {%- assign locale = page.locale | default: layout.locale | default: site.locale %}
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
