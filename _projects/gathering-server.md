@@ -8,7 +8,7 @@ tags:
   - Redis
   - WebSocket
   - MySQL
-status: "In Progress"
+status: "Completed"
 order: 2
 slug: "gathering-server"
 lang: ko

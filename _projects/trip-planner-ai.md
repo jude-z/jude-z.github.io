@@ -9,7 +9,7 @@ tags:
   - PostgreSQL
   - Redis
   - AWS S3
-status: "In Progress"
+status: "Completed"
 order: 1
 slug: "trip-planner-ai"
 lang: ko
