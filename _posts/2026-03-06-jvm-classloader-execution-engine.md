@@ -6,7 +6,7 @@ tags:
   - JVM
   - Java
 lang: ko
-date: 2026-03-06
+date: 2026-03-17
 excerpt: "Class Loader의 Loading → Linking → Initialization 과정과 Execution Engine의 Interpreter, JIT Compiler, GC를 정리한다."
 ---
 

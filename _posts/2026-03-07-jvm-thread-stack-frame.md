@@ -6,7 +6,7 @@ tags:
   - JVM
   - Java
 lang: ko
-date: 2026-03-07
+date: 2026-03-10
 excerpt: "JVM이 내부적으로 관리하는 시스템 스레드와 Stack Frame의 Local Variables, Operand Stack, Frame Data를 정리한다."
 ---
 

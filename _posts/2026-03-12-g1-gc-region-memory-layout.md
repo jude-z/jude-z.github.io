@@ -6,7 +6,7 @@ tags:
   - GC
   - JVM
 lang: ko
-date: 2026-03-12
+date: 2026-03-30
 excerpt: "G1 GC의 Region 분할 방식, RSet/Card Table 동작, Young GC와 Mixed GC 수집 과정을 정리한다."
 ---
 

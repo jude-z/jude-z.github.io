@@ -6,7 +6,7 @@ tags:
   - JVM
   - Java
 lang: ko
-date: 2026-03-05
+date: 2026-03-23
 excerpt: "JVM의 전체 구조를 잡고, Runtime Data Areas 각 영역이 어떤 역할을 하는지 정리한다."
 ---
 
