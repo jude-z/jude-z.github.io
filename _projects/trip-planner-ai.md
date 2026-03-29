@@ -1,6 +1,6 @@
 ---
 title: "Trip Planner AI"
-description: "여행 지역·카테고리·일수를 입력하면 AI가 최적의 일정을 추천해주는 여행 플랫폼."
+description: "여행 지역·카테고리·일수를 입력하면 AI가 최적의 일정을 추천해주는 여행 플랫폼"
 tags:
   - Java
   - Spring Boot
@@ -17,21 +17,21 @@ lang: ko
 
 ## Overview
 
-사용자의 여행 지역, 카테고리, 일수를 기반으로 AI가 최적의 여행 일정을 추천해주는 풀스택 플랫폼.
+사용자의 여행 지역, 카테고리, 일수를 기반으로 AI가 최적의 한국 여행 일정을 추천해주는 서비스
 
 ### Architecture
 
 ![Trip Planner AI Architecture](/assets/images/trip-payment/trip-planner-architecture.png)
 
-- **trip-core** (Spring Boot, :8080) — 인증, 여행 계획, 그룹 여행, 커뮤니티, 북마크 등 핵심 비즈니스 로직
-- **trip-payment** (Spring Boot, :8081) — Toss Payments 연동, 멱등성 키 기반 결제 처리
-- **fastapi-server** (FastAPI, :8000) — K-means 클러스터링 + TSP 경로 최적화 기반 일정 추천 엔진
+- **trip-core** (Spring Boot) — 인증, 여행 계획, 그룹 여행, 커뮤니티, 북마크 등 핵심 비즈니스 로직
+- **trip-payment** (Spring Boot) — Toss Payments 연동, 멱등성 키 기반 결제 처리
+- **fastapi-server** (FastAPI) — K-means 클러스터링 기반 추천
 - **Frontend** — Vercel 배포 (React/Next.js, 별도 레포)
 
 ### Key Features
 
 - JWT + OAuth2 인증 (Kakao, Naver, Google)
-- AI 여행 일정 추천 (K-means 클러스터링, 근접 이웃 경로 최적화)
+- AI 여행 일정 추천 (K-means)
 - 그룹 여행 생성 및 참여
 - 여행 코스 탐색 및 리뷰
 - 영수증 리뷰 (S3 이미지 업로드)
